@@ -4,6 +4,7 @@
     --black-color: #000;
     --text-color: #333;
     --border-color: #dbdbdb; 
+    --star-gold-color: #FFCE3E;
 
     --header-height: 160px;
     --navbar-height: 34px;
@@ -21,6 +22,7 @@ html {
     box-sizing: border-box;
 }
 
+/* Responsive */
 .grid {
     width: 1200px;
     max-width: 100%;
@@ -34,7 +36,30 @@ html {
 .grid_row {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
 }
+
+/* Test */
+.grid_column-2 {
+    padding-left: -5px;
+    padding-right: -5px;
+    width: 16.6667%;
+}
+
+.grid_column-2-4 {
+    padding-left: -5px;
+    padding-right: -5px;
+    width: 20%;
+}
+
+
+.grid_column-10 {
+    padding-left: -5px;
+    padding-right: -5px;
+    width: 66.6667;
+}
+
 
 /* Animation */
 @keyframes fadeIn {
@@ -101,10 +126,15 @@ html {
     outline: none;
     cursor: pointer;
     color: var(--text-color);
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     line-height: 1.6rem;
+}
+
+.btn_child {
+    background-color: white;
+    min-width: 90px;
 }
 
 .btn.btn--normal:hover {
@@ -128,3 +158,94 @@ html {
     cursor: default;
     background-color: #c3c3c3;
 }
+
+/* Selection */
+.select-input {
+    position: relative;
+    min-width: 150px;
+    height: 34px;
+    padding: 0 12px;
+    margin-left: 13px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-input_label {
+    font-size: 1.4rem;
+}
+
+.select-input_icon {
+    font-size: 1.4rem;
+    color: #4A4A4A;
+    position: relative;
+    top: 1px;
+}
+
+.select-input:hover .select-input_list {
+    display: block;
+}
+
+
+.select-input_list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    padding: 8px 14px;
+    list-style: none;
+    display: none;
+    z-index: 1;
+}
+
+.select-input_link {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 4px 0;
+}
+
+.select-input_link:hover {
+    color: var(--primary-color);
+}
+
+/* pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.pagination-item {
+    margin: 0 10px;
+}
+
+.pagination-item--active .pagination-item_link {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.pagination-item--active .pagination-item_link:hover {
+    background-color: #ed5c3f;
+}
+
+.pagination-item_link {
+    --height: 30px;
+    display: block;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #939393;
+    min-width: 40px;
+    height: var(--height);
+    line-height: var(--height);
+    text-align: center;
+    border-radius: 2px;
+}
+
